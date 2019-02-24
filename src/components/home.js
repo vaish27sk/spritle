@@ -11,7 +11,7 @@ class Posts extends Component {
   }
  
   componentWillMount() {
-    for (let i = 0; i < 69; i++) {
+    for (let i = 0; i < 169; i++) {
       const user = {
         name: Faker.internet.userName(),
         email: Faker.internet.email(),
