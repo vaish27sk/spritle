@@ -1,26 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Route} from 'react-router-dom';
+import LandingPage from './components/landing';
+import Profile from './components/profile';
+import Logout from './components/logout';
+import Login from './components/login';
+import Home from './components/home';
+import Navbar from './components/navbar';
+import Post from './components/postc';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div>
+         <Navbar />
+         <Route path="/" component={LandingPage} exact />
+         <Route path="/profile" component={Profile} exact />
+         <Route path="/logout" render={Logout} exact />
+         <Route path="/login" render={Login} exact />
+         <Route path='/home' component={Home} exact />
+      </div> 
     );
   }
 }
